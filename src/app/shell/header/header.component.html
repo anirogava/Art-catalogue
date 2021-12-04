@@ -1,0 +1,41 @@
+<header>
+  <!-- <nav class="navbar sticky-top navbar-light bg-ligt"> -->
+    <div class="container-fluid">
+      <div class="container">
+        <a href="#" class="navbar-brand d-flex align-itemscenter">
+          <strong class="title">{{ "MUSEO DEL PRADO" | translate }}</strong>
+        </a>
+        <div class="d-flex align-items-center">
+          <button
+            type="button"
+            class="btn btn-dark btn-sm btn1"
+            (click)="goToSignIn()"
+          >
+            {{ "auth.SIGN_IN" | translate }}
+          </button>
+          <button
+            type="button"
+            class="btn btn-dark btn-sm"
+            (click)="goToSignUp()"
+          >
+            {{ "auth.SIGN_UP" | translate }}
+          </button>
+          <button
+            type="button"
+            class="btn btn-dark btn-sm"
+            *ngIf="isLoggedIn"
+            (click)="signOut()"
+          >
+            {{ "auth.SIGN_OUT" | translate }}
+          </button>
+          <button class="en icon" [class.inactive]="isKa" (click)="en()">
+            EN
+          </button>
+          <button class="ka icon" [class.inactive]="isEn" (click)="ka()">
+            KA
+          </button>
+        </div>
+      </div>
+    </div>
+  <!-- </nav> -->
+</header>

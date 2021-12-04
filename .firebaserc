@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "museum-13825": {
+      "hosting": {
+        "museum": [
+          "museum-13825"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "museum-13825"
+  }
+}
