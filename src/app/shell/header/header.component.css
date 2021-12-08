@@ -1,5 +1,4 @@
 .title {
-  color: black;
   padding-top: 20px;
   font-size: larger;
   font-weight: 500;
@@ -8,33 +7,24 @@
 .container {
   display: flex;
   align-items: flex-end;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
 }
-.btn-dark {
+.button1 {
   margin-right: 10px;
-  display: flex;
-  align-items: flex-end;
-}
-.btn1 {
-  margin-left: 600px;
-}
-.image {
-  background-color: red;
 }
 .en {
-  color: red;
-  margin-right: 10px;
+  color: #dc3545;
 }
 .ka {
-  color: red;
+  color: #dc3545;
 }
 .inactive {
   filter: grayscale(100%);
 }
 .icon {
-  border: none;
-  outline: none;
-  height: 32px;
-  width: 32px;
+  margin-right: 10px;
 }
 header {
   position: fixed;
@@ -42,4 +32,7 @@ header {
   height: 80px;
   border: 1px solid white;
   background-color: none;
+}
+.signIn {
+  width: 100%;
 }

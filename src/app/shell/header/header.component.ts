@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -15,17 +16,12 @@ export class HeaderComponent implements OnInit {
     return this.isLanguage('ka');
   }
   get isLoggedIn(): boolean {
-    // return this.auth.isLoggedIn;
-    return false;
+    return this.auth.isLoggedIn;
   }
-  get isInitiated(): boolean {
-    // return this.auth.isInitiated;
-    return false;
-  }
-
   constructor(
     private translateService: TranslateService,
-    private router: Router // private auth: AuthService
+    private router: Router,
+    private auth: AuthService
   ) {}
 
   en() {
@@ -41,10 +37,9 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['sign-up']);
   }
   signOut() {
-    console.log('signing out ...');
-    // this.auth.signOut().then(() => {
-    //   this.router.navigate(['sign-in']);
-    // });
+    this.auth.signOut().then(() => {
+      this.router.navigate(['sign-in']);
+    });
   }
 
   private isLanguage(lang: string): boolean {

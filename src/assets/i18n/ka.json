@@ -2,9 +2,14 @@
   "TITLE": "MUSEO DEL PRADO",
   "errors": {
     "NOT_FOUND": "გვერდი ვერ მოიძებნა",
-    "ENTER_ART_NAME": "გთხოვთ მიუთითოთ ნამუშევრის სახელი!"
+    "ENTER_ART_NAME": "გთხოვთ მიუთითოთ ნამუშევრის სახელი!",
+    "EMAIL_IS_REQUIRED": "იმეილი სავალდებულოა",
+    "PASSWORED_IS_REQUIRED": "პაროლი სავალდებულოა",
+    "PLEASE_REPEAT_THE_PASSWORED": "გთხოვთ გაიმეოროთ პაროლი",
+    "PASSWORDS_DO_NOT_MATCH": " პაროლები ერთმანეთს არ ემთხვევა",
+    "EMAIL_NOT_VALID": "ელფოსტა არ არის ვალიდური"
   },
-  "auth":{
+  "auth": {
     "SIGN_IN": "შესვლა",
     "SIGN_UP": "რეგისტრაცია",
     "EMAIL": "ელ-ფოსტა",

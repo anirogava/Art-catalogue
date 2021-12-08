@@ -6,14 +6,14 @@ main {
 }
 .title1 {
   position: fixed;
-  top: 30%;
-  left: 52%;
+  top: 40%;
+  left: 53%;
   margin-top: -100px;
   margin-left: -100px;
 }
 .section2 {
   position: fixed;
-  top: 35%;
+  top: 50%;
   left: 50%;
   margin-top: -100px;
   margin-left: -100px;

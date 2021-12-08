@@ -2,9 +2,14 @@
   "TITLE": "MUSEO DEL PRADO",
   "errors": {
     "NOT_FOUND": "Page not found",
-    "ENTER_ART_NAME": "You must enter art wor name!"
+    "ENTER_ART_NAME": "You must enter art work!",
+    "EMAIL_IS_REQUIRED": "Email is required",
+    "PASSWORED_IS_REQUIRED": "Password is required",
+    "PLEASE_REPEAT_THE_PASSWORED": "Please repeat the password",
+    "PASSWORDS_DO_NOT_MATCH": "Passwords do not match",
+    "EMAIL_NOT_VALID": "Email not valid"
   },
-  "auth":{
+  "auth": {
     "SIGN_IN": "Sign In",
     "SIGN_UP": "Sign Up",
     "EMAIL": "Email",

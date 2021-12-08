@@ -7,10 +7,9 @@ import { AppComponent } from './app.component';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ShellModule } from './shell/shell.module';
 import { AppRoutingModule } from './app-routing.module';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
-import { provideAuth,getAuth } from '@angular/fire/auth';
-import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire/compat';
+import { SharedModule } from './shared/shared.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -23,6 +22,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     HttpClientModule,
     ShellModule,
     AppRoutingModule,
+    SharedModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -31,9 +31,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       },
       defaultLanguage: 'en',
     }),
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore()),
+    AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [],
   bootstrap: [AppComponent],

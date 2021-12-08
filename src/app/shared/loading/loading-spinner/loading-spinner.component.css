@@ -1,0 +1,19 @@
+div.spinner {
+  height: 70px;
+  width: 70px;
+  margin: 20px auto;
+  border-radius: 50%;
+  border: dashed 5px #dc3545;
+  animation-name: loader-spin;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes loader-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
