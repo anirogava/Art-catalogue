@@ -8,6 +8,7 @@ import { AddComponent } from './add/add.component';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { MuseumApiService } from './services';
+import { addFacade } from './add/add.facade';
 
 @NgModule({
   imports: [CommonModule, ContentRoutingModule, SharedModule, FormsModule],
@@ -17,6 +18,6 @@ import { MuseumApiService } from './services';
     DetailsComponent,
     AddComponent,
   ],
-  providers:[MuseumApiService]
+  providers:[MuseumApiService, addFacade]
 })
 export class ContentModule {}

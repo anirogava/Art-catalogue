@@ -16,23 +16,43 @@
             [(ngModel)]="searchKey"
             placeholder="{{ 'catalogue.ENTER_ART_NAME' | translate }}"
           />
-          <button class="btn btn-outline-secondary mt-2" (click)="search()">
+          <button class="btn btn-danger mt-2" (click)="search()">
             {{ "catalogue.SEARCH" | translate }}
           </button>
-          <div class="alert alert-danger mt-2" role="alert" *ngIf="hasError">
+          <div
+            class="alert alert-danger mt-2"
+            role="alert"
+            *ngIf="searchHasError"
+          >
             {{ "errors.ENTER_ART_NAME" | translate }}
           </div>
         </div>
       </div>
       <div class="row d-flex justify-content-center mt-2 flex-row mb-3">
         <div class="d-flex justify-content-center">
-          <!-- (click)="fetchArt(name)" -->
           <span
-            class="badge rounded-pill bg-success ms-1"
+            class="badge badge-pill badge-danger"
             *ngFor="let name of lastThreeSearches"
             >{{ name }}</span
           >
         </div>
+      </div>
+    </div>
+    <div
+      class="mb-3 content"
+      style="max-width: 18rem"
+      *ngIf="selectArt$ | async as selectArt"
+    >
+      <img
+        class="card-img-top image"
+        [src]="selectArt.imageUrl"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ selectArt.title }}</h5>
+        <p class="card-t1">Artist: {{ selectArt.artist }}</p>
+        <p class="card-t1">{{ selectArt.artistBio }}</p>
+        <p class="card-t1">Credits From {{ selectArt.credits }}</p>
       </div>
     </div>
   </div>
