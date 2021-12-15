@@ -10,18 +10,18 @@ const routes: Routes = [
     path: '',
     component: ContentComponent,
   },
-  // {
-  //   path: 'list',
-  //   component: ListComponent,
-  // },
+  {
+    path: 'list',
+    component: ListComponent,
+  },
   {
     path: 'add',
     component: AddComponent,
   },
-  // {
-  //   path: 'details/:id',
-  //   component: DetailsComponent,
-  // },
+  {
+    path: ':id',
+    component: DetailsComponent,
+  },
 ];
 
 @NgModule({

@@ -6,18 +6,31 @@ import { ListComponent } from './list/list.component';
 import { DetailsComponent } from './details/details.component';
 import { AddComponent } from './add/add.component';
 import { SharedModule } from '../shared/shared.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MuseumApiService } from './services';
 import { addFacade } from './add/add.facade';
+import { CharacterDirective } from './add/character.directive';
+import { ArtListItemComponent } from './list/art-list-item/art-list-item.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
-  imports: [CommonModule, ContentRoutingModule, SharedModule, FormsModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ContentRoutingModule,
+    SharedModule,
+    FormsModule,
+    TranslateModule,
+  ],
   declarations: [
     ContentComponent,
-    ListComponent,
     DetailsComponent,
     AddComponent,
+    CharacterDirective,
+    ArtListItemComponent,
+    ListComponent,
   ],
-  providers:[MuseumApiService, addFacade]
+  providers: [MuseumApiService, addFacade],
 })
 export class ContentModule {}

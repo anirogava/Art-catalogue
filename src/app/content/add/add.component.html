@@ -9,14 +9,14 @@
   <div class="py-5">
     <div class="container d-flex justify-content-center flex-column w-100">
       <div class="row d-flex justify-content -center section2">
-        <div class="search-form d-flex justify-content-center flex-column">
+        <div class="search-form d-flex justify-content-center flex-column search2">
           <input
             type="text"
             class="form-control"
             [(ngModel)]="searchKey"
             placeholder="{{ 'catalogue.ENTER_ART_NAME' | translate }}"
           />
-          <button class="btn btn-danger mt-2" (click)="search()">
+          <button class="btn btn-danger mt-2 search" (click)="search()">
             {{ "catalogue.SEARCH" | translate }}
           </button>
           <div
@@ -31,6 +31,7 @@
       <div class="row d-flex justify-content-center mt-2 flex-row mb-3">
         <div class="d-flex justify-content-center">
           <span
+            (click)="fetchArt(name)"
             class="badge badge-pill badge-danger"
             *ngFor="let name of lastThreeSearches"
             >{{ name }}</span
@@ -53,6 +54,55 @@
         <p class="card-t1">Artist: {{ selectArt.artist }}</p>
         <p class="card-t1">{{ selectArt.artistBio }}</p>
         <p class="card-t1">Credits From {{ selectArt.credits }}</p>
+      </div>
+      <div class="row form" *ngIf="selectArt">
+        <form [formGroup]="form" (submit)="submit(selectArt)">
+          <div class="row mb-3">
+            <label for="review" class="col-sm-2 col-form-label">Review</label>
+            <div class="col-sm-10">
+              <textarea
+                formControlName="review"
+                id="review"
+                cols="form-control"
+              ></textarea>
+              <span
+                appCharacter
+                [length]="form.controls['review']?.value.length"
+                > {{  form.controls["review"]?.value.length }}</span
+              >
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="rating" class="col-sm-2 col-form-label">Rating</label>
+            <div class="col-sm-10">
+              <span class="ms-2" *ngFor="let rating of ratings">
+                <input
+                  type="radio"
+                  class="form-check-input"
+                  [value]="rating"
+                  formControlName="rating"
+                />
+              </span>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-danger">Add</button>
+          <ng-container *ngIf="submitted && form.invalid">
+            <div
+              class="alert alert-danger mt-2"
+              role="alert"
+              *ngIf="form.controls['review']?.errors?.['required']"
+            >
+              განხილვა სავალდებულოა
+            </div>
+            <div
+              class="alert alert-danger mt-2"
+              role="alert"
+              *ngIf="form.controls['review']?.errors?.['minLength']"
+            >
+              განხილვა უნდა იყოს მინიმუმ 10 სიმბოლო
+            </div>
+          </ng-container>
+        </form>
       </div>
     </div>
   </div>

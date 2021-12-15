@@ -7,6 +7,12 @@ main {
 .search-form {
   max-width: 800px;
 }
+.search {
+  max-width: 500px;
+}
+.search2 {
+  box-sizing: content-box;
+}
 .alert {
   margin-bottom: 0px !important;
 }
@@ -41,16 +47,24 @@ main {
 .card-body {
   color: white;
   font-weight: 600;
-  background: black;
+  background: #000000;
   opacity: 0.6;
 }
 .card-t1 {
   font-weight: 300;
   width: max-content;
 }
-.badge{
+.badge {
   background-color: #dc3545;
   top: 40%;
   margin-right: 5px;
   margin-top: 170px;
+}
+.form {
+  color: white;
+  position: fixed;
+  display: fixed;
+  top: 70%;
+  left: 45%;
+  width: fit-content;
 }

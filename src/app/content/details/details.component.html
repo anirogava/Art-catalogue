@@ -1,3 +1,21 @@
-<p>
-  details works!
-</p>
+<main class="main1">
+  <div class="box">
+    <ng-container *ngIf="artData$ | async as artData">
+      <div><img [src]="artData.primaryImageSmall" class="img" /></div>
+    </ng-container>
+    <div class="container">
+      <ng-container *ngIf="artData$ | async as artData">
+        <h3>{{ artData.title }}</h3>
+        <p>{{ artData.accessionYear }}</p>
+        <p>{{ artData.artistAlphaSort }}</p>
+        <p>{{ artData.artistDisplayBio }}</p>
+        <p>Credits from {{ artData.creditLine }}</p>
+      </ng-container>
+      <ng-container *ngIf="storeData$ | async as storeData">
+        <p>{{ storeData.review }}</p>
+        <p>Raiting: {{ storeData.rating }}/5</p>
+      </ng-container>
+      <button (click)="goBack()" class="btn btn-outline-danger">Go Back</button>
+    </div>
+  </div>
+</main>

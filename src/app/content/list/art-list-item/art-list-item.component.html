@@ -1,0 +1,19 @@
+<div class="col" *ngIf="item">
+  <div class="image">
+    <img [src]="item.art?.primaryImageSmall" class="image card-img-top image" />
+  </div>
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <p class="h4">{{ item.art?.title }}</p>
+      <div class="btn-group">
+        <button
+          (click)="goToDetails()"
+          type="button"
+          class= "btn btn-outline-light btn-sm"
+        >
+          Details
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

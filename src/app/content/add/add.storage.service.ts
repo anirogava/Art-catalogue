@@ -16,10 +16,10 @@ export class AddArtStorage {
     this.lastThreeSearches = [name, ...this.lastThreeSearches.slice(0, 2)];
     this.storage.set('lastThreeSearches', this.lastThreeSearches);
   }
-  // restoreState() {
-  //   const lastThreeSearches = this.storage.get<string[]>('lastThreeSearches');
-  //   if (lastThreeSearches?.length > 0) {
-  //     this.lastThreeSearches = lastThreeSearches;
-  //   }
-  // }
+  restoreState() {
+    const lastThreeSearches = this.storage.get<string[]>('lastThreeSearches');
+    if (lastThreeSearches && lastThreeSearches.length > 0) {
+      this.lastThreeSearches = lastThreeSearches;
+    }
+  }
 }

@@ -5,5 +5,8 @@
   height: 100vh;
 }
 .title1{
-  padding-top: 80px;
+  padding-top: 40px;
+}
+.middle{
+  padding-top: 0;
 }

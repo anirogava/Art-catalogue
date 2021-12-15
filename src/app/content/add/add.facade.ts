@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { finalize, map, switchMap } from 'rxjs';
 import { loadingService } from 'src/app/services';
-import { StorageService } from 'src/app/services/storage.service';
-import { Art, ArtResult } from '../models';
+import { EventBusService } from 'src/app/services/event-bus.service';
+import { FireApiService } from 'src/app/services/fire-api.service';
+import { FORM_RESET_EVENT_KEY } from '../content.model';
+import { Art, ArtBody, ArtResult } from '../models';
 import { MuseumApiService } from '../services';
 import { AddArtStorage } from './add.storage.service';
 
@@ -14,7 +16,9 @@ export class addFacade {
   constructor(
     private museumApiService: MuseumApiService,
     private loadingService: loadingService,
-    private storage: AddArtStorage
+    private storage: AddArtStorage,
+    private fireApiService: FireApiService,
+    private eventBus: EventBusService
   ) {}
 
   fetchArt(title: string) {
@@ -31,14 +35,21 @@ export class addFacade {
           artist: art.artistAlphaSort,
           artistBio: art.artistDisplayBio,
           credits: art.creditLine,
+          objectID: art.objectID,
         })),
-        finalize(() => this.loadingService.stop())
+        finalize(() => {
+          this.loadingService.stop();
+          this.eventBus.emit(FORM_RESET_EVENT_KEY)
+        })
       );
   }
   addToLastSearches(key: string) {
     this.storage.addToLastSearches(key);
   }
   restoreState() {
-    console.log('restoring state ...');
+    this.storage.restoreState();
+  }
+  submit(body: ArtBody) {
+    this.fireApiService.addArt(body).subscribe((x) => console.log(x));
   }
 }

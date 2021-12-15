@@ -17,13 +17,13 @@ export class AuthService {
     return !!this._user;
   }
 
-  // get userId(): string {
-  //   return this._user.uid
-  // }
-  // private _initiated = false;
-  // get initiated(): boolean {
-  //   return this._initiated;
-  // }
+  get userId() {
+    return this._user?.uid
+  }
+  private _initiated = false;
+  get initiated(): boolean {
+    return this._initiated;
+  }
 
   constructor(private auth: AngularFireAuth){
     // this.auth.onAuthStateChanged((user) =>{

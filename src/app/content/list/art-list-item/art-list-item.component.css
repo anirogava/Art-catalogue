@@ -1,0 +1,21 @@
+.image {
+  max-width: 300px;
+  max-height: 300px;
+}
+.col {
+  position: fixed;
+  top: 40%;
+}
+.card {
+  width: max-content;
+  color: white;
+  font-weight: 600;
+  background: none;
+}
+.card-body{
+  background: none;
+  padding: 0;
+  text-align: center;
+  width: 300px;
+}
+
