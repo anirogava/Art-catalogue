@@ -1,0 +1,33 @@
+{
+  "TITLE": "MUSEO DEL PRADO",
+  "errors": {
+    "NOT_FOUND": "Page not found",
+    "ENTER_ART_NAME": "You must enter art work!",
+    "EMAIL_IS_REQUIRED": "Email is required",
+    "PASSWORED_IS_REQUIRED": "Password is required",
+    "PLEASE_REPEAT_THE_PASSWORED": "Please repeat the password",
+    "PASSWORDS_DO_NOT_MATCH": "Passwords do not match",
+    "EMAIL_NOT_VALID": "Email not valid"
+  },
+  "auth": {
+    "SIGN_IN": "Sign In",
+    "SIGN_UP": "Sign Up",
+    "EMAIL": "Email",
+    "PASSWORD": "Password",
+    "REPEAT_PASSWORD": "Repeat Password",
+    "SIGN_OUT": "Sign Out"
+  },
+  "catalogue": {
+    "ADD_ART": "Add Art Work",
+    "ENTER_ART_NAME": "Enter Art Work Name",
+    "SEARCH": "Search",
+    "WATCHED": "Watched",
+    "WATCH_LATER": "Watch Later",
+    "TOMORROW": "Tomorrow",
+    "THIS_WEEK": "This week",
+    "THIS_MONTH": "This Month",
+    "THIS_YEAR": "This Year",
+    "SELECT": "Select",
+    "ART_HAS_BEEN_ADDED": "Art work has been added"
+  }
+}
